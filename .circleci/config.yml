@@ -33,8 +33,8 @@ jobs:
     steps:
       - checkout  
       - run: npm update
-      - run: npm audit
       - run: npm audit fix
+      - run: npm audit
 
 workflows:
   my_workflow:
