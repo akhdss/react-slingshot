@@ -31,7 +31,11 @@ jobs:
   analyze:
     executor: my-executor
     steps:
-      - checkout  
+      - checkout 
+      - restore_cache:
+          keys: 
+            - 'npm-packages' 
+      - run: npm i
       - run: npm update
       - run: npm audit fix
       - run: npm audit
